@@ -90,6 +90,27 @@
         .product-quantity {
             font-size: 14px;
             color: #666;
+            margin-bottom: 10px;
+        }
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        .product-actions a {
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: white;
+        }
+        .product-actions .update-link {
+            background-color: #007bff;
+        }
+        .product-actions .delete-link {
+            background-color: #dc3545;
+        }
+        .product-actions a:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -98,7 +119,7 @@
 <div class="header">
     <a href="user-home.jsp">Back to Home</a>
     <h1>Your Listed Products</h1>
-    <div></div> <!-- Empty div for flex spacing -->
+    <div></div>
 </div>
 <div class="product-grid">
     <c:forEach var="product" items="${products}">
@@ -112,11 +133,14 @@
                 <div class="product-price">$${product.price}</div>
                 <div class="product-description">${product.description}</div>
                 <div class="product-quantity">In stock: ${product.quantity}</div>
+                <div class="product-actions">
+                    <a href="updateProduct?id=${product.id}" class="update-link">Update</a>
+                    <a href="deleteProduct?id=${product.id}" class="delete-link"
+                       onclick="return confirm('Are you sure you want to delete this product?');">Delete</a>
+                </div>
             </div>
         </div>
     </c:forEach>
-
-
 </div>
 </body>
 </html>

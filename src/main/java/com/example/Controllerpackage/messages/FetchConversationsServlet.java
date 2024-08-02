@@ -37,9 +37,14 @@ public class FetchConversationsServlet extends HttpServlet {
 
         try {
             List<OfferMessageBean> messages = offerMessageDAO.getOfferMessagesByExchangeId(exchangeId);
+            String productName = offerMessageDAO.getProductNameByExchangeId(exchangeId);
+
             request.setAttribute("messages", messages);
             request.setAttribute("exchangeId", exchangeId);
+            request.setAttribute("productName", productName);
             request.setAttribute("receiverId", getReceiverId(messages, session));
+            request.setAttribute("ownerUserName", getOwnerUserName(messages, exchangeId));
+            request.setAttribute("interestedUserName", getInterestedUserName(messages, exchangeId));
             request.getRequestDispatcher("/conversation.jsp").forward(request, response);
         } catch (SQLException e) {
             throw new ServletException("Database error: " + e.getMessage(), e);
@@ -56,5 +61,16 @@ public class FetchConversationsServlet extends HttpServlet {
             }
         }
         return 0;
+    }
+
+    private String getOwnerUserName(List<OfferMessageBean> messages, int exchangeId) throws SQLException {
+        if (messages.isEmpty()) return "";
+        return offerMessageDAO.getOwnerUserNameByExchangeId(exchangeId);
+    }
+
+    private String getInterestedUserName(List<OfferMessageBean> messages, int exchangeId) throws SQLException {
+        if (messages.isEmpty()) return "";
+        OfferMessageBean firstMessage = messages.get(0);
+        return firstMessage.getSenderUsername();
     }
 }

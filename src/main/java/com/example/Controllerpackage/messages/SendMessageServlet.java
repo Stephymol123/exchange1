@@ -3,8 +3,8 @@ package com.example.Controllerpackage.messages;
 import com.example.Beanpackage.ExchangeBean;
 import com.example.Beanpackage.OfferMessageBean;
 import com.example.Daopackage.ExchangeDAO;
-import com.example.Daopackage.OfferMessageDAO;
 import com.example.Beanpackage.Beancls;
+import com.example.Daopackage.OfferMessageDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,7 +45,7 @@ public class SendMessageServlet extends HttpServlet {
         try {
             // Step 1: Create a new exchange
             ExchangeBean exchange = new ExchangeBean();
-            exchange.setItemId(productId);
+            exchange.setProductId(productId);
             exchange.setInterestedUserId(senderId);
             exchange.setStatus("pending");
             int exchangeId = exchangeDAO.createExchange(exchange);

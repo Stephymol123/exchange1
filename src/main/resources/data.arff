@@ -1,0 +1,28 @@
+@relation ItemsDataset
+
+@attribute Brand {Lenovo, Samsung, Apple, Microsoft, Zara, IKEA, Toshiba, Bose, Google, Acer, Panasonic, Crayola, Puma, Bosch, Reebok, None}
+@attribute Model {Pixel_6_Pro, XPS_13, 15_Pro, Surface_Pro_8, QuietComfort_45, Chromebook_Flip, ThinkPad_X1, Nitro_5, InstaView, None}
+@attribute Type {Sofa, Desktop, Tablet, Chair, Skirt, Desk, Jacket, Phone, Dishwasher, Refrigerator, Smartwatch, Speaker, Microwave, None}
+@attribute Colour {Green, Purple, White, Orange, Black, Magenta, Teal, Coral, Bronze, None}
+@attribute RAM {4GB, 12GB, 128GB, 24GB, None}
+@attribute Size {XS, S, M, XXL, None}
+@attribute Category {Clothing, Electronics, Furniture}
+
+@data
+
+Lenovo,None,Desktop,Purple,12GB,None,Electronics
+Bose,QuietComfort_45,Speaker,Black,None,None,Electronics
+Apple,15_Pro,Phone,Green,128GB,None,Electronics
+Google,Pixel_6_Pro,Smartwatch,Bronze,4GB,None,Electronics
+Zara,None,Skirt,Orange,None,XS,Clothing
+Crayola,None,Desk,White,None,None,Furniture
+Puma,None,Jacket,Magenta,None,XXL,Clothing
+Microsoft,Surface_Pro_8,Tablet,Green,24GB,None,Electronics
+Samsung,InstaView,Refrigerator,Teal,None,None,Electronics
+Toshiba,XPS_13,Desktop,Bronze,12GB,None,Electronics
+Zara,None,Jacket,Orange,None,XXL,Clothing
+Acer,Chromebook_Flip,Desktop,Green,None,None,Electronics
+Reebok,None,Jacket,Orange,None,M,Clothing
+Acer,Nitro_5,Desktop,Purple,24GB,None,Electronics
+IKEA,None,Sofa,White,None,None,Furniture
+Lenovo,ThinkPad_X1,Desktop,Coral,4GB,None,Electronics

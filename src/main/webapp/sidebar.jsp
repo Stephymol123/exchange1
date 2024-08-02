@@ -53,10 +53,10 @@
 <body>
 <div class="sidebar">
     <h2 style="text-align: center;">Mary's Exchange</h2>
-    <a href="addProduct">Add Item</a>
-    <a href="update-product.jsp">Update Item</a>
-    <a href="user-item.jsp">My Items</a>
-    <a href="profile.jsp">Profile</a>
+    <a href="user-home.jsp">Dashboard</a>
+    <a href="addProduct">Add New Item</a>
+    <a href="viewExchanges">My Exchanges</a>
+    <a href="userItems">My Items</a>
 </div>
 
 

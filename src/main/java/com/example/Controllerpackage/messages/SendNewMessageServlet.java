@@ -1,8 +1,8 @@
 package com.example.Controllerpackage.messages;
 
 import com.example.Beanpackage.OfferMessageBean;
-import com.example.Daopackage.OfferMessageDAO;
 import com.example.Beanpackage.Beancls;
+import com.example.Daopackage.OfferMessageDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

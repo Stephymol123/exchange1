@@ -100,11 +100,12 @@
 <div class="login-container">
     <h2>Login</h2>
     <form action="user-login" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
 
+
+        <label for="username">Username:</label>
+        <input class="form-input" name="username" id="username" type="text" placeholder="username" required/>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" placeholder="Password" required autocomplete="off">
 
         <input type="submit" value="Login">
     </form>
@@ -116,6 +117,8 @@
         <p style="color:red;">${message}</p>
     </c:if>
 </div>
+
+
 <div class="footer">
     &copy; 2024 Your Website. All rights reserved.
 </div>

@@ -14,7 +14,7 @@
         :root {
             --primary-color: #14397d;
             --secondary-color: #d7eaf3;
-            --accent-color: #ffc107;
+            --accent-color: #3dff07;
             --text-color: #333;
             --light-text-color: #6c757d;
         }
@@ -164,7 +164,7 @@
 <section class="hero">
     <div class="container">
         <h1 style="color: #fff">Mary's Exchange</h1>
-        <p class="lead">Swap.SHARE.Smile</p>
+        <p class="lead">Swap.Share.Smile</p>
     </div>
 </section>
 
@@ -179,20 +179,20 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <blockquote class="blockquote text-center">
-                        <p class="mb-0">"MangoEx has made swapping items so easy and fun. Highly recommend it!"</p>
-                        <footer class="blockquote-footer">Jane Doe</footer>
+                        <p class="mb-0">"Mary's Exchange has made swapping items so easy and fun. Highly recommend it!"</p>
+                        <footer class="blockquote-footer">John Mike</footer>
                     </blockquote>
                 </div>
                 <div class="carousel-item">
                     <blockquote class="blockquote text-center">
                         <p class="mb-0">"Great platform with a friendly community. I found exactly what I needed."</p>
-                        <footer class="blockquote-footer">John Smith</footer>
+                        <footer class="blockquote-footer">Smith John</footer>
                     </blockquote>
                 </div>
                 <div class="carousel-item">
                     <blockquote class="blockquote text-center">
                         <p class="mb-0">"Easy to use and lots of interesting items available for exchange."</p>
-                        <footer class="blockquote-footer">Sarah Lee</footer>
+                        <footer class="blockquote-footer">Rose James</footer>
                     </blockquote>
                 </div>
             </div>

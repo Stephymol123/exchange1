@@ -32,6 +32,10 @@
             color: #333;
             padding: 20px 0;
         }
+        .filter-container {
+            text-align: center;
+            margin: 20px 0;
+        }
         .product-grid {
             display: flex;
             flex-wrap: wrap;
@@ -95,10 +99,23 @@
 <body>
 <jsp:include page="navbar.jsp"/>
 <div class="header">
-
     <h1>All Products</h1>
-    <div></div> <!-- Empty div for flex spacing -->
 </div>
+
+<div class="filter-container">
+    <form action="allProducts" method="get">
+        <label for="category">Filter by Category:</label>
+        <select id="category" name="category" onchange="this.form.submit()">
+            <option value="">All Categories</option>
+            <c:forEach var="category" items="${categories}">
+                <option value="${category.id}" ${category.id == selectedCategory ? 'selected' : ''}>
+                        ${category.category}
+                </option>
+            </c:forEach>
+        </select>
+    </form>
+</div>
+
 <div class="product-grid">
     <c:forEach var="product" items="${products}">
         <div class="product-card">
@@ -110,7 +127,7 @@
                 <div class="product-category">${product.categoryName}</div>
                 <div class="product-price">$${product.price}</div>
                 <div class="product-description">${product.description}</div>
-                <div class="product-quantity">In stock: ${product.quantity}</div>
+
             </div>
         </div>
     </c:forEach>

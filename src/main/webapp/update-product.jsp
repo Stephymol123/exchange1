@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
@@ -73,18 +74,32 @@
             text-align: center;
             margin-top: 20px;
         }
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>Update Product Details</h1>
-    <form action="updateProduct" method="post">
+    <!-- Add enctype="multipart/form-data" for file uploads -->
+    <form action="updateProduct" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="${product.id}">
         <input type="hidden" name="user_id" value="${product.user_id}">
+
         <div class="form-group">
-            <label for="category_id">Category ID:</label>
-            <input type="text" id="category_id" name="category_id" class="form-control" value="${product.category_id}" required>
+            <label for="category_id">Category:</label>
+            <select id="category_id" name="category_id" class="form-control" required>
+                <c:forEach var="category" items="${categories}">
+                    <option value="${category.id}" ${category.id == product.category_id ? 'selected' : ''}>
+                            ${category.category}
+                    </option>
+                </c:forEach>
+            </select>
         </div>
+
         <div class="form-group">
             <label for="pname">Product Name:</label>
             <input type="text" id="pname" name="pname" class="form-control" value="${product.pname}" required>
@@ -101,10 +116,20 @@
             <label for="quantity">Quantity:</label>
             <input type="text" id="quantity" name="quantity" class="form-control" value="${product.quantity}" required>
         </div>
+
+        <!-- Display Images -->
         <div class="form-group">
-            <label for="pimages">Image URL:</label>
-            <input type="text" id="pimages" name="pimages" class="form-control" value="${product.pimages}" required>
+            <c:forEach var="image" items="${fn:split(product.pimages, ',')}">
+                <img src="${image}" alt="${product.pname}" class="product-image">
+            </c:forEach>
         </div>
+
+        <!-- Add New Image Upload -->
+        <div class="form-group">
+            <label for="newImage">Add New Images:</label>
+            <input type="file" id="newImage" name="newImage" class="form-control" multiple>
+        </div>
+
         <div class="form-group text-center">
             <button style="color: #3498db" type="submit" class="btn btn-custom btn-primary">Update</button>
         </div>

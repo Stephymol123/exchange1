@@ -9,6 +9,7 @@ public class OfferMessageBean {
     private int receiverId;
     private String message;
     private Timestamp createdAt;
+    private String senderUsername;
 
     // Getters and setters
     public int getId() {
@@ -57,6 +58,13 @@ public class OfferMessageBean {
 
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
+    }
+    public String getSenderUsername() {
+        return senderUsername;
+    }
+
+    public void setSenderUsername(String senderUsername) {
+        this.senderUsername = senderUsername;
     }
 }
 

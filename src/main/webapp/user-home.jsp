@@ -63,12 +63,13 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
-<div class="sidebar">
+<div class="sidebar"><br>
+    <br>
     <a href="<c:url value='/allProducts' />">All Items</a>
     <a href="<c:url value='/addProduct' />">Add Item</a>
     <!--<a href="<c:url value='/updateProduct' />">Update Item</a>-->
     <a href="<c:url value='/userItems' />">My Items</a>
-    <a href="<c:url value='/profile.jsp' />">Profile</a>
+
 </div>
 <div class="content">
 

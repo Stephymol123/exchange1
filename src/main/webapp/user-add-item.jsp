@@ -97,7 +97,7 @@
             <input type="text" id="pname" name="pname" class="form-control" required />
         </div>
         <div class="form-group">
-            <label for="price">Price (Rs):</label>
+            <label for="price">Price ($):</label>
             <input type="number" id="price" name="price" step="0.01" class="form-control" required />
         </div>
         <div class="form-group">
@@ -122,7 +122,7 @@
             <input type="file" id="pimages" name="pimages" accept="image/*" multiple class="form-control-file" required />
         </div>
         <div class="form-group text-center">
-            <input type="submit" style="color: #3498db" value="Add" class="btn btn-custom btn-primary" />
+            <input type="submit" style="color: #6bacd8" value="Add" class="btn btn-custom btn-primary" />
         </div>
         <div class="back-link">
             <a href="user-home.jsp" class="btn btn-secondary">Back</a>

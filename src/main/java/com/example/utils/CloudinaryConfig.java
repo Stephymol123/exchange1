@@ -4,6 +4,8 @@ import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import io.github.cdimascio.dotenv.Dotenv;
 
+import java.util.Map;
+
 public class CloudinaryConfig {
 
     private static final Cloudinary cloudinary;
@@ -21,5 +23,12 @@ public class CloudinaryConfig {
 
     public static Cloudinary getCloudinary() {
         return cloudinary;
+    }
+    public static String uploadImage(byte[] imageBytes, String fileName) throws Exception {
+        Map uploadResult = cloudinary.uploader().upload(imageBytes, ObjectUtils.asMap(
+                "public_id", fileName,
+                "folder", "uploads/"
+        ));
+        return uploadResult.get("secure_url").toString();
     }
 }

@@ -103,7 +103,6 @@
         <div><span class="label">Category:</span> ${product.categoryName}</div>
         <div><span class="label">Price:</span> $${product.price}</div>
         <div><span class="label">Description:</span> ${product.description}</div>
-        <div><span class="label">Quantity:</span> ${product.quantity}</div>
         <div>
             <span class="label">Images:</span>
             <div class="image-gallery">
